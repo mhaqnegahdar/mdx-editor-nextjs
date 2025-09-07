@@ -1,8 +1,3 @@
-**Answer:**
-Here’s a clean, practical README for your `mdx-editor-nextjs` project, keeping the structure close to your example but tailored for an MDX editor + viewer setup.
-
----
-
 # MDX Editor + Viewer for Next.js
 
 A minimal yet extensible setup for writing and rendering MDX in Next.js.
@@ -137,4 +132,5 @@ npm install rehype-highlight rehype-slug rehype-autolink-headings
 3. Define custom components for reusable blog elements
 4. Keep plugins in the correct order (`rehype-slug` before `rehype-autolink-headings`)
 5. Separate **editor** and **viewer** responsibilities cleanly
+
 
