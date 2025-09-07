@@ -132,5 +132,3 @@ npm install rehype-highlight rehype-slug rehype-autolink-headings
 3. Define custom components for reusable blog elements
 4. Keep plugins in the correct order (`rehype-slug` before `rehype-autolink-headings`)
 5. Separate **editor** and **viewer** responsibilities cleanly
-
-
