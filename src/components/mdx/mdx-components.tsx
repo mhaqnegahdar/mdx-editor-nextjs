@@ -1,12 +1,11 @@
 import React from "react";
-import { Badge } from "@/components/ui/badge"; // Adjust import based on your UI library
 import { ConfettiButton } from "@/components/ui/confetti";
 
 // HTML element props types
 type HTMLProps = React.HTMLAttributes<HTMLElement>;
 type AnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
-type TableProps = React.TableHTMLAttributes<HTMLTableElement>
-type CellProps = React.TdHTMLAttributes<HTMLTableCellElement>
+type TableProps = React.TableHTMLAttributes<HTMLTableElement>;
+type CellProps = React.TdHTMLAttributes<HTMLTableCellElement>;
 
 // Custom callout component
 export function Callout({
@@ -33,7 +32,13 @@ export function Callout({
   );
 }
 // Editor wrapper for Callout
-export const CalloutEditor = ({ type, title }: { type?: string; title?: string }) => {
+export const CalloutEditor = ({
+  type,
+  title,
+}: {
+  type?: string;
+  title?: string;
+}) => {
   return (
     <Callout
       type={type as "info" | "warning" | "success" | "error"}
@@ -73,39 +78,37 @@ export const mdxComponents = {
   code: (props: HTMLProps) => (
     <code className="bg-gray-100 px-1 py-0.5 rounded text-sm" {...props} />
   ),
-  // pre: CustomCodeBlock,
   blockquote: (props: HTMLProps) => (
     <blockquote
       className="border-l-4 border-gray-300 pl-4 italic my-4"
       {...props}
     />
   ),
-table: (props: TableProps) => (
-  <div className="overflow-x-auto">
-    <table
-      className="min-w-full border border-gray-200 divide-y divide-gray-200 text-sm text-left"
+  table: (props: TableProps) => (
+    <div className="overflow-x-auto">
+      <table
+        className="min-w-full border border-gray-200 divide-y divide-gray-200 text-sm text-left"
+        {...props}
+      />
+    </div>
+  ),
+  th: (props: CellProps) => (
+    <th
+      className="px-4 py-2 bg-gray-50 font-medium text-gray-700 border-b border-gray-200"
       {...props}
     />
-  </div>
-),
-th: (props: CellProps) => (
-  <th
-    className="px-4 py-2 bg-gray-50 font-medium text-gray-700 border-b border-gray-200"
-    {...props}
-  />
-),
-td: (props: CellProps) => (
-  <td
-    className="px-4 py-2 text-gray-700 border-b border-gray-200"
-    {...props}
-  />
-),
-hr: (props: HTMLProps) => (
-  <hr className="my-6 border-t border-gray-300" {...props} />
-),
+  ),
+  td: (props: CellProps) => (
+    <td
+      className="px-4 py-2 text-gray-700 border-b border-gray-200"
+      {...props}
+    />
+  ),
+  hr: (props: HTMLProps) => (
+    <hr className="my-6 border-t border-gray-300" {...props} />
+  ),
 
   // Custom components available in MDX
   Callout,
-  Badge,
   ConfettiButtonDemo,
 };
